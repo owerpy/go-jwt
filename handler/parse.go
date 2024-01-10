@@ -2,7 +2,6 @@ package handler
 
 import (
 	"errors"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"net/http"
@@ -44,10 +43,5 @@ func Parse(g *gin.Context) (string, error) {
 		return "", err
 	}
 
-	if tkn.Valid {
-		fmt.Println(claims.Username)
-		return claims.Username, nil
-	}
-
-	return "", nil
+	return claims.Username, nil
 }
