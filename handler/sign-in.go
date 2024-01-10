@@ -77,8 +77,9 @@ func SignIn(g *gin.Context) {
 	// Finally, we set the client cookie for "tk" as the JWT we just generated
 	// we also set an expiry time which is the same as the tk itself
 	http.SetCookie(g.Writer, &http.Cookie{
-		Name:    tk,
-		Value:   tokenString,
-		Expires: expirationTime,
+		Name:     tk,
+		Value:    tokenString,
+		Expires:  expirationTime,
+		HttpOnly: false,
 	})
 }

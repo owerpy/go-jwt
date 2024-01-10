@@ -9,7 +9,7 @@ import (
 func Logout(g *gin.Context) {
 	// immediately clear the tk cookie
 	http.SetCookie(g.Writer, &http.Cookie{
-		Name:     "tk",
+		Name:     tk,
 		Expires:  time.Now(),
 		HttpOnly: false,
 		MaxAge:   -1,

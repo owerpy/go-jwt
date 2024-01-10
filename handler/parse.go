@@ -11,6 +11,7 @@ const tk string = "token"
 
 func Parse(g *gin.Context) (string, error) {
 	c, err := g.Request.Cookie(tk)
+	//	fmt.Println(c.Expires.Before(time.Now()), c.Expires.After(time.Now()), c.Expires)
 	if err != nil {
 		if errors.Is(err, http.ErrNoCookie) {
 			g.Writer.WriteHeader(http.StatusUnauthorized)

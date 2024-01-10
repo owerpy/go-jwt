@@ -8,7 +8,6 @@ import (
 const url = "localhost:8000"
 
 func main() {
-	//var g *gin.Engine
 	g := gin.New()
 	// we will implement these handlers in the next sections
 	g.POST("/sign-in", handler.SignIn)
